@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>  
+<head>  	
+	<title>Skynet Logo</title>
+    <script language="javascript" type="text/javascript" src="js/p5.min.js"></script>
+<script language="javascript" type="text/javascript">
+
+// You need a chain of vectors for a shape. This requires an array of distances and angles.
+// One element is needed for every side to be drawn
+const dists = [ 295, 100, 141.4213562373095, 279.32955446926843 ];
+const angles = [ 0, 90, 135, -134.27477570094078 ];
+
+// These global variables will keep changing
+let x2;
+let y2;
+
+let vertexArray = [4];
+
+function setup() {
+	createCanvas(1000, 563);
+  	smooth();
+  	noLoop();
+}
+
+function draw() {
+	// Clear the screen. Black background  
+	background(0); 
+	//noFill();
+	
+  	// Invert the y axis
+	scale(1, -1);
+	translate(0, -height);
+	
+	  
+	// Create an instance of an object  
+	var objPolygon = new Polygon(200, 220);  
+	objPolygon.display(); 
+	
+
+    // Mirror the polygon across the vertical axis
+    push();
+    translate(width, 0);
+    scale(-1, 1);
+	// decreasing the x position to mirror the polygon ensures that the mirrored polygon is drawn in the correct position
+	objPolygon2 = new Polygon(190, 220);  
+	objPolygon2.display();    
+    pop();
+	
+	// Draw the rotated rectangle above the two polygons
+    push();	
+	fill("#bc0000");
+	stroke("#424242");
+	strokeWeight(2);
+	translate(505, 467);
+	rotate(radians(44.69));
+	rect(-90, -90, 136.4, 136.4);
+	pop();
+
+	// Draw the horizontal lines across the entire canvas
+    push();	
+	stroke(0);
+	strokeWeight(3);
+	for (let y = 0; y < height; y += 11) {
+	line(0, y, width, y);
+	}
+	pop();
+
+	// Redraw the polygons without fill so only their outlines remain visible over the hatching.
+	push();
+	noFill();
+	stroke("#424242");
+	strokeWeight(2);
+	objPolygon.displayOutline();
+	pop();
+
+	push();
+	translate(width, 0);
+	scale(-1, 1);
+	noFill();
+	stroke("#424242");
+	strokeWeight(2);
+	objPolygon2.displayOutline();
+	pop();
+
+	// Draw the rotated rectangle above the two polygons
+    push();	
+	noFill();
+	stroke("#424242");
+	strokeWeight(2);
+	translate(505, 467);
+	rotate(radians(44.69));
+	rect(-90, -90, 136.4, 136.4);
+	pop();	
+
+	// All these calculations are for testing purposes only. They are not used in the final drawing of the polygon.
+	/*
+	// Find the distance between two points, the length of the line
+    dist1 = dist(0, 0, 295, 0);
+    console.log("dist1: " + dist1);
+    // dist1: 295
+
+   	dist2 = dist(295, 0, 295, 100);
+    console.log("dist2: " + dist2);
+    // dist2: 100
+
+   	dist3 = dist(295, 100, 195, 200);
+    console.log("dist3: " + dist3);
+    // dist3: 141.4213562373095
+
+	dist4 = dist( 195, 200, 0, 0);
+    console.log("dist4: " + dist4);
+    // dist4: 279.32955446926843
+
+	// Find the angle of the line
+    angle1 = angleBetweenDeg(0, 0, 295, 0)
+    console.log("angle1 is: " + angle1);
+    // angle1 is: 0
+
+	// Find the angle of the line
+    angle2 = angleBetweenDeg(295, 0, 295, 100)
+    console.log("angle2 is: " + angle2);
+    // angle2 is: 90
+	
+	// Find the angle of the line
+    angle3 = angleBetweenDeg(295, 100, 195, 200)
+    console.log("angle3 is: " + angle3);
+    // angle3 is: 135
+	
+	// Find the angle of the line
+    angle4 = angleBetweenDeg(195, 200, 0, 0)
+    console.log("angle4 is: " + angle4);
+    // angle4 is: -134.27477570094078
+	*/
+
+}
+	
+// The shapes are filled in red but have black lines running across.
+// So I can draw the polygon, give it a red fill, draw black parallel 
+// lines on top of it, then redraw the polygon border which should not be cut by the black lines.
+
+/*
+#b00000 red background
+#424242  gray line
+
+Eurostile Bold Extended
+*/
+
+// Function to find the angle between two points
+function angleBetweenDeg(x1, y1, x2, y2) {
+    return Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
+}
+
+// Build a list of vertices from a chain of vector lengths and angles.
+function buildChainVertices(startX, startY, lengths, anglesInDegrees) {
+    let x = startX;
+    let y = startY;
+    const vertices = [{ x, y }];
+
+    for (let i = 0; i < lengths.length; i++) {
+        const angleRad = radians(anglesInDegrees[i]);
+        x += cos(angleRad) * lengths[i];
+        y += sin(angleRad) * lengths[i];
+        vertices.push({ x, y });
+    }
+
+    return vertices;
+}
+
+function drawChainShape(startX, startY, lengths, anglesInDegrees) {
+    const vertices = buildChainVertices(startX, startY, lengths, anglesInDegrees);
+
+    beginShape();
+    for (const p of vertices) {
+        vertex(p.x, p.y);
+    }
+    endShape(CLOSE);
+}
+
+class Polygon {
+    // Constructor for the object
+    constructor(axPos, ayPos) {
+        this.xPos = axPos;
+        this.yPos = ayPos;
+    }	
+ 
+    display() {
+        push(); 
+        
+        // Position the object
+        translate(this.xPos, this.yPos);
+
+        fill("#bc0000");
+        stroke("#424242");
+        strokeWeight(2);
+
+        drawChainShape(0, 0, dists, angles);
+        
+        pop();
+      }
+
+    displayOutline() {
+        push();
+        translate(this.xPos, this.yPos);
+        noFill();
+        stroke("#424242");
+        strokeWeight(2);
+        drawChainShape(0, 0, dists, angles);
+        pop();
+    }
+}     
+      
+</script>
+</head>  
+
+<body>
+	  <!-- no other content -->
+</body>
+</html>
