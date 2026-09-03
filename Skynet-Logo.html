@@ -92,6 +92,25 @@ function draw() {
 	rect(-90, -90, 136.4, 136.4);
 	pop();	
 
+    // Text requires a fill
+	fill(255);
+	textSize(35);
+	push();
+	resetMatrix();
+	textAlign(CENTER);
+	text("NEURAL NET-BASED ARTIFICIAL INTELLIGENCE", width / 2, 453);
+	pop();
+	
+    push();
+    fill("#bc0000")
+	textFont('Courier New');
+	textSize(20);
+ 	resetMatrix();
+	textAlign(CENTER);   
+	// Increase Y value to place text underneath previous line
+	text("CYBERDINE SYSTEMS CORPORATION", width / 2, 483);
+    pop();
+
 	// All these calculations are for testing purposes only. They are not used in the final drawing of the polygon.
 	/*
 	// Find the distance between two points, the length of the line
@@ -143,6 +162,16 @@ function draw() {
 #424242  gray line
 
 Eurostile Bold Extended
+
+8 pixels between letters
+25 pixels down from bottom of Polygon
+
+S 105x70
+K 95x70
+Y 100x70
+N 95x70
+E 100x70
+T 100x70
 */
 
 // Function to find the angle between two points
