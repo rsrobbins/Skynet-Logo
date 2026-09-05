@@ -36,7 +36,6 @@ function draw() {
 	var objPolygon = new Polygon(200, 220);  
 	objPolygon.display(); 
 	
-
     // Mirror the polygon across the vertical axis
     push();
     translate(width, 0);
@@ -98,7 +97,7 @@ function draw() {
 	push();
 	resetMatrix();
 	textAlign(CENTER);
-	text("NEURAL NET-BASED ARTIFICIAL INTELLIGENCE", width / 2, 453);
+	text("NEURAL NET-BASED ARTIFICIAL INTELLIGENCE", width / 2, 485);
 	pop();
 	
     push();
@@ -108,8 +107,33 @@ function draw() {
  	resetMatrix();
 	textAlign(CENTER);   
 	// Increase Y value to place text underneath previous line
-	text("CYBERDINE SYSTEMS CORPORATION", width / 2, 483);
+	text("CYBERDINE SYSTEMS CORPORATION", width / 2, 515);
     pop();
+
+	// Create an instance of an object  
+	var objLetterS = new LetterS(188, 193);  
+	objLetterS.display(); 
+
+	// Create an instance of an object  
+	var objLetterK = new LetterK(301, 193);  
+	objLetterK.display(); 
+	
+	// Create an instance of an object  
+	var objLetterY = new LetterY(404, 193);  
+	objLetterY.display(); 	
+
+	// Create an instance of an object  
+	var objLetterN = new LetterN(512, 193);  
+	objLetterN.display(); 	
+
+	// Create an instance of an object  
+	var objLetterE = new LetterE(615, 193);  
+	objLetterE.display(); 	
+
+	// Create an instance of an object  
+	var objLetterT = new LetterT(723, 193);  
+	objLetterT.display(); 	
+
 
 	// All these calculations are for testing purposes only. They are not used in the final drawing of the polygon.
 	/*
@@ -237,7 +261,174 @@ class Polygon {
         pop();
     }
 }     
-      
+    
+class LetterS {
+  constructor(x, y, scale = 1) {
+    this.x = x;
+    this.y = y;
+    this.s = scale;
+  }
+
+    display() {
+        push(); 
+        
+        // Position the object
+        translate(this.x, this.y);
+
+		// Move origin to bottom-left and flip the y-axis upward
+		//translate(0, height);
+		scale(1, -1);
+
+		stroke("#ffffff");
+		strokeWeight(5);
+		point(0, 0);
+		strokeWeight(1);
+		noFill();
+		rectMode(CORNER);
+		rect(0, 0, 105, 70);
+		pop();
+	}	
+}
+
+class LetterK {
+  constructor(x, y, scale = 1) {
+    this.x = x;
+    this.y = y;
+    this.s = scale;
+  }
+
+    display() {
+        push(); 
+        
+        // Position the object
+        translate(this.x, this.y);
+
+		// Move origin to bottom-left and flip the y-axis upward
+		//translate(0, height);
+		scale(1, -1);
+
+		stroke("#ffffff");
+		strokeWeight(5);
+		point(0, 0);
+		strokeWeight(1);
+		noFill();
+		rectMode(CORNER);
+		rect(0, 0, 95, 70);
+		pop();
+	}	
+}
+
+class LetterY {
+  constructor(x, y, scale = 1) {
+    this.x = x;
+    this.y = y;
+    this.s = scale;
+  }
+
+    display() {
+        push(); 
+        
+        // Position the object
+        translate(this.x, this.y);
+
+		// Move origin to bottom-left and flip the y-axis upward
+		//translate(0, height);
+		scale(1, -1);
+
+		stroke("#ffffff");
+		strokeWeight(5);
+		point(0, 0);
+		strokeWeight(1);
+		noFill();
+		rectMode(CORNER);
+		rect(0, 0, 100, 70);
+		pop();
+	}	
+}
+
+class LetterN {
+  constructor(x, y, scale = 1) {
+    this.x = x;
+    this.y = y;
+    this.s = scale;
+  }
+
+    display() {
+        push(); 
+        
+        // Position the object
+        translate(this.x, this.y);
+
+		// Move origin to bottom-left and flip the y-axis upward
+		//translate(0, height);
+		scale(1, -1);
+
+		stroke("#ffffff");
+		strokeWeight(5);
+		point(0, 0);
+		strokeWeight(1);
+		noFill();
+		rectMode(CORNER);
+		rect(0, 0, 95, 70);
+		pop();
+	}	
+}
+
+class LetterE {
+  constructor(x, y, scale = 1) {
+    this.x = x;
+    this.y = y;
+    this.s = scale;
+  }
+
+    display() {
+        push(); 
+        
+        // Position the object
+        translate(this.x, this.y);
+
+		// Move origin to bottom-left and flip the y-axis upward
+		//translate(0, height);
+		scale(1, -1);
+
+		stroke("#ffffff");
+		strokeWeight(5);
+		point(0, 0);
+		strokeWeight(1);
+		noFill();
+		rectMode(CORNER);
+		rect(0, 0, 100, 70);
+		pop();
+	}	
+}
+
+class LetterT {
+  constructor(x, y, scale = 1) {
+    this.x = x;
+    this.y = y;
+    this.s = scale;
+  }
+
+    display() {
+        push(); 
+        
+        // Position the object
+        translate(this.x, this.y);
+
+		// Move origin to bottom-left and flip the y-axis upward
+		//translate(0, height);
+		scale(1, -1);
+
+		stroke("#ffffff");
+		strokeWeight(5);
+		point(0, 0);
+		strokeWeight(1);
+		noFill();
+		rectMode(CORNER);
+		rect(0, 0, 100, 70);
+		pop();
+	}	
+}
 </script>
 </head>  
 
