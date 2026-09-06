@@ -314,6 +314,12 @@ class LetterK {
 		noFill();
 		rectMode(CORNER);
 		rect(0, 0, 95, 70);
+
+		fill("#ffffff");
+		strokeWeight(0);
+		// Vertical line
+		rect(0, 0, 17, 70);
+
 		pop();
 	}	
 }
@@ -395,14 +401,29 @@ class LetterE {
 		strokeWeight(5);
 		point(0, 0);
 		strokeWeight(1);
-		noFill();
+		fill("#ffffff");
 		rectMode(CORNER);
-		rect(0, 0, 100, 70);
+		// rect(x, y, width, height, redius)
+		rect(0, 0, 100, 70, 20);
+		fill("#000000");
+		strokeWeight(0);
+		
+		rect(17, 17, 93, 38, 10);
+		fill("#ffffff");
+		// top line
+		rect(17, 0, 83, 17);
+		// middle line
+		rect(17, 26, 83, 17);
+		// bottom line
+		rect(17, 53, 83, 17);
+
 		pop();
 	}	
 }
 
 class LetterT {
+
+
   constructor(x, y, scale = 1) {
     this.x = x;
     this.y = y;
@@ -421,14 +442,22 @@ class LetterT {
 
 		stroke("#ffffff");
 		strokeWeight(5);
-		point(0, 0);
+		//point(0, 0);
 		strokeWeight(1);
 		noFill();
 		rectMode(CORNER);
-		rect(0, 0, 100, 70);
+		//rect(0, 0, 100, 70);
+
+		// Top line
+		fill("#ffffff");
+		rect(0, 0, 100, 17);
+		// Middle line
+		rect(50 - (17/2), 0, 17, 70);		
+
 		pop();
 	}	
 }
+
 </script>
 </head>  
 
