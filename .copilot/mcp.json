@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "bookService": {
+      "type": "http",
+      "url": "https://www.williamsportwebdeveloper.com/cgi/mcp_server.php"
+      
+    }
+  }
+}
