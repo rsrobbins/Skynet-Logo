@@ -371,11 +371,36 @@ class LetterN {
 
 		stroke("#ffffff");
 		strokeWeight(5);
-		point(0, 0);
+		//point(0, 0);
 		strokeWeight(1);
 		noFill();
 		rectMode(CORNER);
-		rect(0, 0, 95, 70);
+		//rect(0, 0, 95, 70);
+
+		// Left side vertical line of letter N
+		fill("#ffffff");
+		strokeWeight(0);
+		// Vertical line
+		rect(0, 15, 17, 55);
+
+		// Right side vertical line of letter N
+		fill("#ffffff");
+		strokeWeight(0);
+		// Vertical line
+		rect(78, 0, 17, 55);
+
+		fill("#ffffff");
+  		stroke(0, 0, 0);
+  		arc(17, 17, 34, 34, PI, -HALF_PI);
+
+		fill("#ffffff");
+  		stroke(0, 0, 0);
+  		arc(78, 53, 34, 34, 0, HALF_PI);
+		
+		// Diagonal line of letter N
+		strokeWeight(17);
+		stroke("#ffffff");
+		line(17, 8, 78, 61);
 		pop();
 	}	
 }
@@ -399,7 +424,7 @@ class LetterE {
 
 		stroke("#ffffff");
 		strokeWeight(5);
-		point(0, 0);
+		//point(0, 0);
 		strokeWeight(1);
 		fill("#ffffff");
 		rectMode(CORNER);
