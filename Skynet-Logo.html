@@ -281,27 +281,50 @@ class LetterS {
 
 		stroke("#ffffff");
 		strokeWeight(5);
-		point(0, 0);
+		//point(0, 0);
 		strokeWeight(1);
 		noFill();
 		rectMode(CORNER);
-		rect(0, 0, 105, 70);
-
+		//rect(0, 0, 105, 70);
 
 		fill("#ffffff");
 		// top rounded rectangle
 		// rect(x, y, width, height, redius)
-		rect(0, 0, 105, 35, 20);
+		rect(0, 0, 105, 47, 20);
 
 		// bottom rounded rectangle
 		// rect(x, y, width, height, redius)
-		rect(0, 35, 105, 35, 20);	
+		rect(0, 23, 105, 47, 20);	
 
 	    // top line
 		rect(17, 0, 88, 17);
 	    // bottom line
 		rect(0, 53, 83, 17);
 
+		strokeWeight(0);
+		fill("#000000");
+		//black top line
+		rect(20, 18, 105, 9, 20);	
+		//black bottom line
+		rect(-20, 45, 105, 9, 20);
+
+		push();		
+		scale(-1, 1);         // flip horizontally
+		fill("#000000");
+		rect(-106, 22, 17, 17);
+		fill("#ffffff");
+		// arc(x, y, width, height, start, stop)
+  		arc(-89, 44, 34, 34, PI, -HALF_PI);	
+		pop();
+
+		// Left underside of top curve
+		scale(1, -1);         // flip vertically
+		fill("#000000");
+		rect(-1, -54, 17, 17);
+		fill("#ffffff");
+  		stroke(0, 0, 0);
+		// arc(x, y, width, height, start, stop)
+  		arc(17, -28, 34, 34, PI, -HALF_PI);
 
 		pop();
 	}	
