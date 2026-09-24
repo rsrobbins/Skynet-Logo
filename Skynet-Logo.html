@@ -308,6 +308,7 @@ class LetterS {
 		//black bottom line
 		rect(-20, 45, 105, 9, 20);
 
+		// Right topside of bottom curve
 		push();		
 		scale(-1, 1);         // flip horizontally
 		fill("#000000");
@@ -325,6 +326,15 @@ class LetterS {
   		stroke(0, 0, 0);
 		// arc(x, y, width, height, start, stop)
   		arc(17, -28, 34, 34, PI, -HALF_PI);
+
+		// Top black line edge curve
+		fill("#000000");
+		arc(27, -18, 18, 18, PI, -HALF_PI);
+
+		// Bottom black line edge curve
+		scale(-1, 1);         // flip horizontally
+		fill("#000000");
+		arc(-78, -45, 18, 18, PI, -HALF_PI);
 
 		pop();
 	}	
