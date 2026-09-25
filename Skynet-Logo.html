@@ -398,6 +398,45 @@ class LetterY {
 		noFill();
 		rectMode(CORNER);
 		rect(0, 0, 100, 70);
+
+		// Right side vertical line of letter Y
+		fill("#ffffff");
+		strokeWeight(0);
+		// Vertical line
+		rect(83, 0, 17, 55);
+
+		// Bottom curve of the right side
+		fill("#ffffff");
+  		stroke(0, 0, 0);
+  		arc(83, 53, 34, 34, 0, HALF_PI);
+		
+		// Bottom line of letter Y
+		strokeCap(SQUARE);
+		strokeWeight(18);
+		stroke("#ffffff");
+		line(83, 61, 23, 61);
+
+		// Top line of letter Y
+		strokeCap(SQUARE);
+		strokeWeight(18);
+		stroke("#ffffff");
+		line(83, 33, 22, 33);	
+		
+		// Left side vertical line of letter Y
+		strokeCap(SQUARE);
+		strokeWeight(18);
+		stroke("#ffffff");
+		line(13, 0, 13, 25);	
+
+		// Bottom curve of the left side
+		push();		
+		scale(-1, 1);         // flip vertically
+		fill("#ffffff");
+		strokeWeight(0);
+		// arc(x, y, width, height, start, stop)
+  		arc(-22, 25, 35, 35, 0, HALF_PI);	
+		pop();	
+
 		pop();
 	}	
 }
