@@ -368,7 +368,54 @@ class LetterK {
 		fill("#ffffff");
 		strokeWeight(0);
 		// Vertical line
-		rect(0, 0, 17, 70);
+		rect(0, 0, 19, 70);
+
+		// Top curve of the join
+		push();
+		scale(-1, -1);         // flip vertically
+		fill("#ffffff");
+  		stroke(0, 0, 0);
+  		arc(-35, -35, 34, 34, 0, HALF_PI);	
+		scale(1, -1);         // flip horizontally
+		arc(-35, 35, 34, 34, 0, HALF_PI);	
+		pop();
+
+		stroke("#0000ff");
+		strokeWeight(6);
+		/*
+		//point(30, 20);
+		point(39, 35);
+
+		point(95, 70);
+		point(60, 70);
+		point(35, 52);
+	
+		point(95, 0);
+		point(60, 0);
+		point(35, 19);	
+		point(39, 35);
+	*/
+		strokeWeight(0);
+		fill("#ffffff");
+
+		beginShape();
+			vertex(95, 0);
+			vertex(60, 0);
+			vertex(35, 19);	
+			vertex(39, 35);
+		endShape(CLOSE);
+	
+
+		beginShape();
+			vertex(95, 70);
+			vertex(60, 70);
+			vertex(30, 52);	
+			vertex(19, 21);
+		endShape(CLOSE);
+
+
+
+
 
 		pop();
 	}	
