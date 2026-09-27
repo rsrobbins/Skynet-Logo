@@ -359,11 +359,11 @@ class LetterK {
 
 		stroke("#ffffff");
 		strokeWeight(5);
-		point(0, 0);
+		//point(0, 0);
 		strokeWeight(1);
 		noFill();
 		rectMode(CORNER);
-		rect(0, 0, 95, 70);
+		//rect(0, 0, 95, 70);
 
 		fill("#ffffff");
 		strokeWeight(0);
@@ -380,8 +380,8 @@ class LetterK {
 		arc(-35, 35, 34, 34, 0, HALF_PI);	
 		pop();
 
-		stroke("#0000ff");
-		strokeWeight(6);
+		stroke("#00ff00");
+		strokeWeight(8);
 		/*
 		//point(30, 20);
 		point(39, 35);
@@ -395,26 +395,33 @@ class LetterK {
 		point(35, 19);	
 		point(39, 35);
 	*/
+		//point(35, 19); // Top of the inner arc where the top diagonal line joins
+	    //point(39, 35); // This is where the lines join
+		//point(30, 52);	// Bottom of the inner arc where the bottom diagonal line joins
+		//point(19, 21);	// This is where the lines join
 		strokeWeight(0);
 		fill("#ffffff");
 
+		// Top diagonal line
 		beginShape();
 			vertex(95, 0);
 			vertex(60, 0);
-			vertex(35, 19);	
+			vertex(33, 17);	
 			vertex(39, 35);
 		endShape(CLOSE);
 	
-
+		// Bottom diagonal line
 		beginShape();
 			vertex(95, 70);
 			vertex(60, 70);
 			vertex(30, 52);	
-			vertex(19, 21);
+			vertex(39, 35);
 		endShape(CLOSE);
 
-
-
+		// Need a rectangle to hide a gap
+		strokeCap(SQUARE);
+		// rect(x, y, width, height, redius)
+		rect(30, 25, 9, 17,  0);
 
 
 		pop();
@@ -440,11 +447,11 @@ class LetterY {
 
 		stroke("#ffffff");
 		strokeWeight(5);
-		point(0, 0);
+		//point(0, 0);
 		strokeWeight(1);
 		noFill();
 		rectMode(CORNER);
-		rect(0, 0, 100, 70);
+		//rect(0, 0, 100, 70);
 
 		// Right side vertical line of letter Y
 		fill("#ffffff");
