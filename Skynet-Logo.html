@@ -445,8 +445,8 @@ class LetterY {
 		//translate(0, height);
 		scale(1, -1);
 
-		stroke("#ffffff");
-		strokeWeight(5);
+		stroke("#00ff00");
+		strokeWeight(7);
 		//point(0, 0);
 		strokeWeight(1);
 		noFill();
@@ -490,6 +490,13 @@ class LetterY {
 		// arc(x, y, width, height, start, stop)
   		arc(-22, 25, 35, 35, 0, HALF_PI);	
 		pop();	
+
+		// Rounded corner tile at right of bottom line
+		drawRightCornerTile(78, 47);   
+
+		// Rounded corner tile at right of top line
+		drawRightCornerTile(78, 19);   
+		drawLeftCornerTile(22, 14);   
 
 		pop();
 	}	
@@ -626,6 +633,41 @@ class LetterT {
 	}	
 }
 
+function drawRightCornerTile(x, y) {
+  push();
+  // Translate to the specified x and y position
+  translate(x, y);
+  
+  // 1. Draw the base square in black
+  fill(255);
+  noStroke();
+  rect(0, 0, 10, 10);
+  
+  // 2. Draw the white arc sector in the top-left (center at 0, 0 relative to translation)
+  fill(0);
+  noStroke();
+  arc(0, 0, 10, 10, 0, HALF_PI, PIE);
+  
+  pop();
+}
+
+function drawLeftCornerTile(x, y) {
+  push();
+  translate(x, y);
+  
+  // 1. Draw the base square in black
+  fill(255);
+  noStroke();
+  rect(0, 0, 10, 10);
+  
+  // 2. Draw the white arc sector 
+  // Center is now at the top-right corner (10, 0) with a diameter of 20
+  fill(0);
+  noStroke();
+  arc(10, 0, 20, 20, HALF_PI, PI, PIE);
+  
+  pop();
+}
 </script>
 </head>  
 
